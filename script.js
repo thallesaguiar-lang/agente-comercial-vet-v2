@@ -1,19 +1,94 @@
-const menuToggle = document.querySelector('.menu-toggle');
-const nav = document.querySelector('.site-nav');
-const navLinks = document.querySelectorAll('.site-nav a');
+const chat = document.getElementById('chat');
+const chatForm = document.getElementById('chatForm');
+const messageInput = document.getElementById('messageInput');
+const seedLead = document.getElementById('seedLead');
+const resetChat = document.getElementById('resetChat');
+const channel = document.getElementById('channel');
+const intent = document.getElementById('intent');
 
-if (menuToggle && nav) {
-  menuToggle.addEventListener('click', () => {
-    const isOpen = nav.classList.toggle('open');
-    document.body.classList.toggle('menu-open', isOpen);
-    menuToggle.setAttribute('aria-expanded', String(isOpen));
-  });
+const state = {
+  qualified: false,
+  collectedName: false,
+  collectedPet: false,
+  askedIntent: false,
+};
 
-  navLinks.forEach((link) => {
-    link.addEventListener('click', () => {
-      nav.classList.remove('open');
-      document.body.classList.remove('menu-open');
-      menuToggle.setAttribute('aria-expanded', 'false');
-    });
-  });
+function addMessage(text, sender = 'bot') {
+  const el = document.createElement('div');
+  el.className = `bubble ${sender}`;
+  el.textContent = text;
+  chat.appendChild(el);
+  chat.scrollTop = chat.scrollHeight;
 }
+
+function resetState() {
+  state.qualified = false;
+  state.collectedName = false;
+  state.collectedPet = false;
+  state.askedIntent = false;
+}
+
+function botReply(message) {
+  const msg = message.toLowerCase();
+
+  if (!state.collectedName) {
+    state.collectedName = true;
+    return 'Perfeito. Antes de te orientar melhor, posso saber seu nome e o nome do seu pet?';
+  }
+
+  if (!state.collectedPet) {
+    state.collectedPet = true;
+    return 'Ótimo. Agora me conta: ele é cão ou gato, qual a idade e o que você quer entender hoje — preço, cobertura ou contratação?';
+  }
+
+  if (msg.includes('preço') || msg.includes('valor') || msg.includes('caro')) {
+    return 'Entendo. Muita gente começa olhando o valor mensal, mas o ponto principal é previsibilidade e evitar sustos com gastos avulsos. Se quiser, eu posso te mostrar como normalmente isso faz sentido no cuidado do pet.';
+  }
+
+  if (msg.includes('cobertura') || msg.includes('cobre')) {
+    return 'Posso sim. O ideal é te explicar a cobertura com clareza, separando o que entra no plano e o que depende de regra específica. Se quiser, seguimos por esse caminho.';
+  }
+
+  if (msg.includes('contratar') || msg.includes('fechar') || msg.includes('quero')) {
+    state.qualified = true;
+    return 'Perfeito. Pelo que você me trouxe, já dá para avançar. O próximo passo ideal seria te apresentar a opção mais aderente e seguir para proposta ou contratação assistida.';
+  }
+
+  if (msg.includes('pensar') || msg.includes('depois')) {
+    return 'Sem problema. Faz sentido decidir com segurança. Se quiser, eu posso resumir a melhor direção para o seu caso e depois retomo com você.';
+  }
+
+  return 'Entendi. Pelo seu contexto, eu seguiria com uma qualificação leve e depois te mostraria a opção mais aderente ao perfil do pet. Se quiser, eu continuo daqui.';
+}
+
+function boot() {
+  addMessage('Oi! Sou o agente comercial veterinário de teste. Posso te ajudar a simular uma conversa sobre planos de saúde pet.');
+}
+
+chatForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const text = messageInput.value.trim();
+  if (!text) return;
+
+  addMessage(text, 'user');
+  messageInput.value = '';
+
+  setTimeout(() => {
+    addMessage(botReply(text), 'bot');
+  }, 300);
+});
+
+seedLead.addEventListener('click', () => {
+  resetState();
+  chat.innerHTML = '';
+  addMessage(`Simulação iniciada via ${channel.value}. Objetivo do lead: ${intent.value}.`);
+  addMessage('Oi! Posso te ajudar a entender qual plano de saúde pode fazer mais sentido para o seu pet. Me conta rapidinho sua principal dúvida hoje?');
+});
+
+resetChat.addEventListener('click', () => {
+  resetState();
+  chat.innerHTML = '';
+  boot();
+});
+
+boot();
