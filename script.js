@@ -3,6 +3,7 @@ const chatForm = document.getElementById('chatForm');
 const messageInput = document.getElementById('messageInput');
 const seedLead = document.getElementById('seedLead');
 const resetChat = document.getElementById('resetChat');
+const startConversation = document.getElementById('startConversation');
 const channel = document.getElementById('channel');
 const intent = document.getElementById('intent');
 
@@ -26,6 +27,14 @@ function resetState() {
   state.collectedName = false;
   state.collectedPet = false;
   state.askedIntent = false;
+}
+
+function startFlow() {
+  resetState();
+  chat.innerHTML = '';
+  addMessage(`Simulação iniciada via ${channel.value}. Objetivo do lead: ${intent.value}.`);
+  addMessage('Oi! Posso te ajudar a entender qual plano de saúde pode fazer mais sentido para o seu pet. Me conta rapidinho sua principal dúvida hoje?');
+  messageInput.focus();
 }
 
 function botReply(message) {
@@ -62,7 +71,7 @@ function botReply(message) {
 }
 
 function boot() {
-  addMessage('Oi! Sou o agente comercial veterinário de teste. Posso te ajudar a simular uma conversa sobre planos de saúde pet.');
+  addMessage('Oi! Sou o agente comercial veterinário de teste. Clique em “Iniciar conversa” para começar ou digite direto no campo abaixo.');
 }
 
 chatForm.addEventListener('submit', (e) => {
@@ -78,12 +87,8 @@ chatForm.addEventListener('submit', (e) => {
   }, 300);
 });
 
-seedLead.addEventListener('click', () => {
-  resetState();
-  chat.innerHTML = '';
-  addMessage(`Simulação iniciada via ${channel.value}. Objetivo do lead: ${intent.value}.`);
-  addMessage('Oi! Posso te ajudar a entender qual plano de saúde pode fazer mais sentido para o seu pet. Me conta rapidinho sua principal dúvida hoje?');
-});
+seedLead.addEventListener('click', startFlow);
+startConversation.addEventListener('click', startFlow);
 
 resetChat.addEventListener('click', () => {
   resetState();
