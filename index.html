@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agente Comercial Vet IA · Versão Operacional</title>
+    <meta name="description" content="Versão operacional pronta de um agente comercial de IA para clínica veterinária vender planos de saúde pet com prompt, fluxos, objeções, follow-up, CRM e handoff." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a href="#top" class="brand">VET<span>AI OPS</span></a>
+        <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+        <nav class="site-nav">
+          <a href="#prompt">Prompt</a>
+          <a href="#fluxos">Fluxos</a>
+          <a href="#crm">CRM</a>
+          <a href="#contato" class="nav-cta">Usar este playbook</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Versão operacional · pronta para implantação</p>
+            <h1>O playbook do agente comercial veterinário de IA.</h1>
+            <p class="hero-text">
+              Aqui está a versão utilizável: prompt mestre profissional, mensagens, objeções, follow-up, handoff humano e estrutura de CRM para vender planos de saúde pet com consistência.
+            </p>
+            <div class="hero-actions">
+              <a href="#prompt" class="btn btn-primary">Ver prompt mestre</a>
+              <a href="#fluxos" class="btn btn-secondary">Ver fluxos</a>
+            </div>
+            <div class="hero-metrics">
+              <div><strong>Prompt</strong><span>base profissional</span></div>
+              <div><strong>Fluxos</strong><span>entrada, qualificação e fechamento</span></div>
+              <div><strong>CRM</strong><span>tags, estágios e handoff</span></div>
+            </div>
+          </div>
+          <aside class="hero-card">
+            <p class="card-tag">Entregável</p>
+            <h2>Pronto para adaptar</h2>
+            <ul>
+              <li>Prompt mestre</li>
+              <li>Fluxos por etapa</li>
+              <li>Mensagens prontas</li>
+              <li>Tratamento de objeções</li>
+              <li>Follow-up e reativação</li>
+              <li>Estrutura de CRM e handoff humano</li>
+            </ul>
+            <a href="#contato" class="btn btn-primary full">Aplicar na clínica</a>
+          </aside>
+        </div>
+      </section>
+
+      <section id="prompt" class="section section-dark">
+        <div class="container">
+          <div class="section-head left">
+            <p class="eyebrow">Prompt mestre profissional</p>
+            <h2>Base para o agente comercial</h2>
+            <p>Copie, adapte com os dados reais dos planos e conecte ao canal escolhido.</p>
+          </div>
+          <div class="prompt-box">
+<pre>Você é um agente comercial de IA de uma clínica veterinária.
+Seu foco é vender planos de saúde pet com tom consultivo, humano, acolhedor e objetivo.
+
+Você atua em WhatsApp, site, Instagram, CRM e e-mail.
+
+Sua missão é:
+- captar leads
+- responder rapidamente
+- qualificar tutor e pet
+- identificar intenção de compra
+- apresentar o plano mais adequado
+- tratar objeções
+- agendar atendimento ou proposta
+- fazer follow-up
+- reativar leads parados
+- encaminhar para humano quando necessário
+
+Seu tom deve ser:
+- consultivo
+- humano
+- acolhedor
+- claro
+- sem pressão exagerada
+- orientado ao próximo passo
+
+Informações que você sempre deve buscar:
+- nome do tutor
+- nome do pet
+- espécie
+- raça
+- idade
+- cidade ou bairro
+- principal necessidade
+- principal dúvida
+- momento da compra
+- objeção principal
+
+Objetivos da conversa:
+1. entender o contexto
+2. reduzir atrito
+3. indicar o plano adequado
+4. avançar para proposta, agendamento ou contratação
+
+Regras:
+- nunca invente preço, cobertura, carência ou regra
+- se não souber, diga que vai confirmar
+- se for caso clínico sensível, encaminhe para humano
+- não discuta diagnóstico veterinário
+- sempre encerre com um próximo passo claro
+- registre dados relevantes no CRM
+
+Quando encaminhar para humano:
+- negociação especial
+- dúvida clínica
+- reclamação sensível
+- exceção comercial
+- lead muito quente pronto para fechamento humano
+
+Exemplo de fechamento:
+"Pelo perfil do seu pet, já consigo te direcionar para a opção mais aderente. Se quiser, eu posso seguir agora com os próximos passos para proposta, contratação ou agendamento."</pre>
+          </div>
+        </div>
+      </section>
+
+      <section id="fluxos" class="section">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Fluxos operacionais</p>
+            <h2>Como a conversa deve andar</h2>
+          </div>
+          <div class="cards-grid">
+            <article class="info-card">
+              <h3>1. Abertura</h3>
+              <p><strong>Mensagem:</strong> “Oi! Posso te ajudar a entender qual plano de saúde pode fazer mais sentido para o seu pet. Me conta rapidinho sua principal dúvida?”</p>
+            </article>
+            <article class="info-card">
+              <h3>2. Qualificação</h3>
+              <p><strong>Mensagem:</strong> “Antes de te indicar a melhor opção, me fala o nome do pet, espécie, idade e o que você busca hoje: economia, prevenção ou mais cobertura?”</p>
+            </article>
+            <article class="info-card">
+              <h3>3. Direcionamento</h3>
+              <p><strong>Mensagem:</strong> “Perfeito. Pelo que você me contou, já consigo te mostrar a opção que tende a fazer mais sentido.”</p>
+            </article>
+            <article class="info-card">
+              <h3>4. Avanço</h3>
+              <p><strong>Mensagem:</strong> “Se quiser, eu posso seguir agora com proposta, contratação ou agendamento para te orientar melhor.”</p>
+            </article>
+            <article class="info-card">
+              <h3>5. Follow-up</h3>
+              <p><strong>Mensagem:</strong> “Oi! Passando para saber se você ainda quer entender a melhor opção de plano para o seu pet. Se quiser, eu retomo daqui.”</p>
+            </article>
+            <article class="info-card">
+              <h3>6. Reativação</h3>
+              <p><strong>Mensagem:</strong> “Oi! Vi que sua conversa ficou pausada. Se ainda fizer sentido, posso te ajudar a retomar e te mostrar a opção mais adequada.”</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-dark">
+        <div class="container split-grid">
+          <div>
+            <p class="eyebrow">Objeções prontas</p>
+            <h2>Tratamento comercial sem parecer robô</h2>
+            <div class="feature-list">
+              <div class="feature-item">
+                <span>01</span>
+                <div>
+                  <h3>“Tá caro”</h3>
+                  <p>“Entendo. Muita gente compara primeiro com o valor mensal, mas o principal ponto é previsibilidade e redução de susto financeiro quando o pet precisa.”</p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <span>02</span>
+                <div>
+                  <h3>“Quero pensar”</h3>
+                  <p>“Claro. Faz sentido decidir com segurança. Se quiser, eu posso te resumir a opção mais adequada e depois retomo com você no melhor momento.”</p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <span>03</span>
+                <div>
+                  <h3>“Meu pet quase não usa”</h3>
+                  <p>“Perfeito, e justamente por isso muita gente vê valor no cuidado preventivo e na previsibilidade, em vez de depender só do gasto avulso quando aparece algo.”</p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <span>04</span>
+                <div>
+                  <h3>“Quero entender a cobertura”</h3>
+                  <p>“Sem problema. Posso te explicar o que o plano contempla e o que não contempla, de forma bem objetiva.”</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="experience-panel">
+            <h3>Quando passar para humano</h3>
+            <div class="timeline">
+              <div class="timeline-item"><strong>Dúvida clínica</strong><p>Encaminhar imediatamente para equipe adequada.</p></div>
+              <div class="timeline-item"><strong>Negociação especial</strong><p>Quando houver condição fora da regra padrão.</p></div>
+              <div class="timeline-item"><strong>Lead muito quente</strong><p>Quando o fechamento humano aumentar a chance de conversão.</p></div>
+              <div class="timeline-item"><strong>Cliente irritado</strong><p>Evitar escalar atrito. Passar para humano.</p></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="crm" class="section">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Estrutura de CRM</p>
+            <h2>O mínimo que precisa ficar registrado</h2>
+          </div>
+          <div class="cards-grid">
+            <article class="info-card">
+              <h3>Campos do lead</h3>
+              <p>Nome do tutor, telefone, e-mail, pet, espécie, raça, idade, cidade, canal de entrada.</p>
+            </article>
+            <article class="info-card">
+              <h3>Estágio</h3>
+              <p>Novo lead, qualificado, proposta enviada, aguardando retorno, agendado, fechado, perdido, reativação.</p>
+            </article>
+            <article class="info-card">
+              <h3>Tags úteis</h3>
+              <p>Preço, cobertura, urgência, pet idoso, lead quente, objeção carência, pediu humano.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-accent">
+        <div class="container">
+          <div class="section-head left">
+            <p class="eyebrow">Follow-up sugerido</p>
+            <h2>Cadência simples</h2>
+          </div>
+          <div class="cards-grid">
+            <article class="info-card"><h3>D+1</h3><p>Retomar interesse e resumir a melhor opção.</p></article>
+            <article class="info-card"><h3>D+3</h3><p>Voltar com abordagem leve e reforço de valor.</p></article>
+            <article class="info-card"><h3>D+7</h3><p>Último toque cordial com abertura para retorno futuro.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contato" class="section final-cta">
+        <div class="container final-cta-box">
+          <div>
+            <p class="eyebrow">Pronto para implementar</p>
+            <h2>Agora sim você tem uma versão operacional.</h2>
+            <p>
+              O próximo nível é conectar isso com planos reais, CRM, agenda e canal de atendimento para colocar em produção.
+            </p>
+          </div>
+          <form class="lead-form">
+            <input type="text" placeholder="Seu nome" />
+            <input type="text" placeholder="Nome da clínica" />
+            <input type="email" placeholder="Seu melhor e-mail" />
+            <button type="button" class="btn btn-primary">Quero implementar essa operação</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
